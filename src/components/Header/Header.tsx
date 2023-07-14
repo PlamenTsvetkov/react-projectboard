@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, NavDropdown  } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../Account/Account';
 import { FaCog } from 'react-icons/fa';
@@ -37,12 +37,16 @@ const Header: React.FC = () => {
                 <Nav.Link as={Link} to="/" className="text-primary">
                   Dashboard
                 </Nav.Link>
-                <Nav.Link as={Link} to="#" className="text-primary button">
-                  Event Monitor
-                </Nav.Link>
-                <Nav.Link as={Link} to="#" className="text-primary button">
-                  Schedules
-                </Nav.Link>
+                {isAuthenticated && (
+                  <>
+                    <Nav.Link as={Link} to="/eventmonitor" className="text-primary button">
+                      Event Monitor
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="#" className="text-primary button">
+                      Schedules
+                    </Nav.Link>
+                  </>
+                )}
               </Nav>
             </div>
             <div>
