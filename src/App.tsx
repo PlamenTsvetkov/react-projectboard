@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import ChangePassword from './components/ChangePassword/ChangePassword';
 import EventMonitor from './components/EventMonitor/EventMonitor';
 import isAuth from './hoc/isAuth';
+import Details from './components/Details/Details';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" Component={Home} />
             <Route path="/changepassword" Component={isAuth(ChangePassword)} />
             <Route path="/eventmonitor" Component={isAuth(EventMonitor)} />
+            <Route path="/games/:gameId" Component={Details} />
           </Routes>
         </main>
 
